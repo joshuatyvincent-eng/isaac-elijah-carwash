@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <title>Isaac & Elijah's Car Wash — Queen Creek Villages</title>
+  <meta name="description" content="Two Queen Creek Villages teens raising money for a summer business. Pro-quality hand car washes — $20 exterior with brake dust decontamination." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!--
+    ============================================
+    EDIT THIS BLOCK TO UPDATE THE SITE
+    ============================================
+    To update the amount raised, change the
+    data-raised attribute on the <main> tag below.
+    Everything else editable is inline in the HTML.
+  -->
+
+  <main data-raised="0" data-goal="1000">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="bubbles" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="hero-inner">
+        <p class="eyebrow">Queen Creek Villages</p>
+        <h1>Isaac &amp; Elijah's<br/><span class="accent">Car Wash</span></h1>
+        <p class="tagline">Two neighborhood teens. One clean car. Helping us launch a real summer business.</p>
+
+        <div class="cta-row">
+          <a href="#book" class="btn btn-primary">Book a Wash</a>
+          <a href="#story" class="btn btn-ghost">Our Story</a>
+        </div>
+
+        <div class="trust-row">
+          <span class="chip">✓ Hand-washed</span>
+          <span class="chip">✓ Brake dust removal</span>
+          <span class="chip">✓ Local teens you can trust</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROGRESS ============ -->
+    <section class="progress-section">
+      <div class="progress-card">
+        <div class="progress-header">
+          <h2>Our Summer Goal</h2>
+          <p>We're saving up for an <strong>AI website-building tool</strong> so we can start an online business this summer.</p>
+        </div>
+        <div class="progress-amounts">
+          <div class="amount">
+            <span class="amount-label">Raised</span>
+            <span class="amount-value" id="raisedValue">$0</span>
+          </div>
+          <div class="amount goal">
+            <span class="amount-label">Goal</span>
+            <span class="amount-value" id="goalValue">$1,000</span>
+          </div>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-label="Fundraising progress">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <p class="progress-note" id="progressNote">Every wash gets us closer.</p>
+      </div>
+    </section>
+
+    <!-- ============ STORY ============ -->
+    <section class="story" id="story">
+      <div class="story-grid">
+        <div class="story-photos">
+          <figure class="photo-slot photo-slot-1">
+            <img src="images/foam.jpg" alt="Applying foam soap with a pressure cannon" loading="lazy" />
+          </figure>
+          <figure class="photo-slot photo-slot-2">
+            <img src="images/portrait.jpg" alt="Hand-scrubbing the wheel with a microfiber mitt" loading="lazy" />
+          </figure>
+          <figure class="photo-slot photo-slot-3">
+            <img src="images/rinse.jpg" alt="Rinsing the roof and windows clean" loading="lazy" />
+          </figure>
+        </div>
+        <div class="story-text">
+          <p class="eyebrow accent">Meet the team</p>
+          <h2>Hi! We're Isaac &amp; Elijah.</h2>
+          <p>We live right here in Queen Creek Villages. This summer we're working hard to save up for a tool that will help us build websites for small businesses — and we figured the best way to earn it is the old-fashioned way: <strong>hand-washing cars, door to door.</strong></p>
+          <p>We don't cut corners. Every car gets a real scrub, real attention, and we won't leave until it looks better than when we pulled out the hose.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services" id="book">
+      <p class="eyebrow center">What we do</p>
+      <h2 class="center">Simple pricing. Great wash.</h2>
+
+      <div class="service-card-wrap">
+        <div class="service-card">
+          <div class="service-price">
+            <span class="dollar">$</span><span class="price">20</span>
+          </div>
+          <h3>Full Exterior Wash</h3>
+          <ul class="features">
+            <li>Pre-rinse + foam soap</li>
+            <li>Hand-scrubbed top to bottom</li>
+            <li><strong>Brake dust decontamination</strong> on wheels</li>
+            <li>Tires &amp; rims cleaned</li>
+            <li>Windows streak-free</li>
+            <li>Hand-dried — no water spots</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-full">Book This Wash</a>
+        </div>
+      </div>
+
+      <p class="services-note">
+        Bigger truck, SUV, or extra-muddy? Just ask us at the door — we'll be fair.
+      </p>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section class="gallery">
+      <p class="eyebrow center">Recent work</p>
+      <h2 class="center">See the difference</h2>
+      <div class="gallery-strip">
+        <figure><img src="images/spray.jpg" alt="Foam pre-soak covering the whole car" loading="lazy" /></figure>
+        <figure><img src="images/detail.jpg" alt="Hand-scrubbing the side panel" loading="lazy" /></figure>
+        <figure><img src="images/team.jpg" alt="Both boys working on the car together" loading="lazy" /></figure>
+        <figure><img src="images/drying.jpg" alt="Hand-drying for a streak-free finish" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="testimonials">
+      <p class="eyebrow center">Happy neighbors</p>
+      <h2 class="center">What people are saying</h2>
+
+      <div class="testimonial-grid">
+
+        <!-- EDIT: Replace with real testimonials as they come in -->
+        <figure class="testimonial">
+          <blockquote>"They were polite, thorough, and my car looked amazing when they were done. Happy to support local kids working this hard."</blockquote>
+          <figcaption>
+            <strong>Sarah M.</strong>
+            <span>Queen Creek Villages neighbor</span>
+          </figcaption>
+        </figure>
+
+        <figure class="testimonial">
+          <blockquote>"Best $20 I've spent in a long time. The wheels especially — I didn't know they could look that clean."</blockquote>
+          <figcaption>
+            <strong>Mike R.</strong>
+            <span>Queen Creek Villages neighbor</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <p class="testimonial-cta">Want to vouch for us after your wash? Just text us — we'd love to add you here.</p>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="contact" id="contact">
+      <div class="contact-card">
+        <h2>Ready to book?</h2>
+        <p>If we're already on your doorstep — just say the word. Otherwise:</p>
+
+        <!-- EDIT: Replace this phone number -->
+        <a href="sms:+14805550123" class="btn btn-primary btn-large">
+          Text us to book
+        </a>
+        <a href="tel:+14805550123" class="phone-link">
+          Or call (480) 555-0123
+        </a>
+
+        <p class="service-area">Serving Queen Creek Villages and nearby streets only — we walk to you!</p>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+      <p>Thanks for supporting two Queen Creek kids chasing a real business idea. 🚗💧</p>
+      <p class="small">© <span id="year"></span> Isaac &amp; Elijah's Car Wash</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

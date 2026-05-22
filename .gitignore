@@ -1,0 +1,10 @@
+.DS_Store
+.vercel
+node_modules
+*.log
+
+# Raw camera originals — kept locally as backup, not deployed
+# (the optimized + rotated copies are committed: hero.jpg, foam.jpg, etc.)
+images/IMG_*.jpeg
+images/IMG_*.MOV
+images/.gitkeep
