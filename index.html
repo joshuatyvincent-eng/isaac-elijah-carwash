@@ -75,25 +75,64 @@
 
     <!-- ============ STORY ============ -->
     <section class="story" id="story">
-      <div class="story-grid">
-        <div class="story-photos">
-          <figure class="photo-slot">
-            <img src="images/foam.jpg" alt="Applying foam soap with a pressure cannon" loading="lazy" />
-          </figure>
-          <figure class="photo-slot">
-            <img src="images/portrait.jpg" alt="Hand-scrubbing the wheel with a microfiber mitt" loading="lazy" />
-          </figure>
-          <figure class="photo-slot">
-            <img src="images/drying.jpg" alt="Hand-drying for a streak-free finish" loading="lazy" />
-          </figure>
-        </div>
-        <div class="story-text">
-          <p class="eyebrow accent">Meet the team</p>
-          <h2>Hi! We're Isaac &amp; Elijah.</h2>
-          <p>We live right here in Queen Creek Villages. This summer we're working hard to save up for a tool that will help us build websites for small businesses — and we figured the best way to earn it is the old-fashioned way: <strong>hand-washing cars, door to door.</strong></p>
-          <p>We don't cut corners. Every car gets a real scrub, real attention, and we won't leave until it looks better than when we pulled out the hose.</p>
-        </div>
+      <div class="story-inner">
+        <p class="eyebrow accent center">Meet the team</p>
+        <h2 class="center">Hi! We're Isaac &amp; Elijah.</h2>
+        <p>We live right here in Queen Creek Villages. This summer we're working hard to save up for a tool that will help us build websites for small businesses — and we figured the best way to earn it is the old-fashioned way: <strong>hand-washing cars, door to door.</strong></p>
+        <p>We don't cut corners. Every car gets a real scrub, real attention, and we won't leave until it looks better than when we pulled out the hose.</p>
       </div>
+    </section>
+
+    <!-- ============ CAROUSEL ============ -->
+    <section class="carousel-section">
+      <p class="eyebrow center">See us in action</p>
+      <h2 class="center">Swipe through our work</h2>
+      <p class="carousel-hint">Tap any photo to view full-size · swipe or use ‹ › to scroll</p>
+
+      <div class="carousel" role="region" aria-label="Photo gallery of Isaac and Elijah at work">
+        <button class="carousel-nav carousel-nav-prev" type="button" aria-label="Previous photos">‹</button>
+        <div class="carousel-track" id="carouselTrack">
+          <button type="button" class="carousel-card" data-img="images/team.jpg" data-alt="Isaac and Elijah working as a team at the wheel">
+            <img src="images/team.jpg" alt="Isaac and Elijah working as a team at the wheel" loading="lazy" />
+            <span class="carousel-caption">Isaac &amp; Elijah</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/foam.jpg" data-alt="Applying foam soap with a pressure cannon">
+            <img src="images/foam.jpg" alt="Applying foam soap with a pressure cannon" loading="lazy" />
+            <span class="carousel-caption">Foam pre-soak</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/spray.jpg" data-alt="Foam coverage over the whole car">
+            <img src="images/spray.jpg" alt="Foam coverage over the whole car" loading="lazy" />
+            <span class="carousel-caption">Full coverage</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/hero.jpg" data-alt="Car fully covered in cleaning foam">
+            <img src="images/hero.jpg" alt="Car fully covered in cleaning foam" loading="lazy" />
+            <span class="carousel-caption">Soaked &amp; ready</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/detail.jpg" data-alt="Hand-scrubbing the side panel with a microfiber mitt">
+            <img src="images/detail.jpg" alt="Hand-scrubbing the side panel with a microfiber mitt" loading="lazy" />
+            <span class="carousel-caption">Hand-scrubbed</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/portrait.jpg" data-alt="Detailing the wheel and removing brake dust">
+            <img src="images/portrait.jpg" alt="Detailing the wheel and removing brake dust" loading="lazy" />
+            <span class="carousel-caption">Brake dust gone</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/rinse.jpg" data-alt="Rinsing the roof and windows clean">
+            <img src="images/rinse.jpg" alt="Rinsing the roof and windows clean" loading="lazy" />
+            <span class="carousel-caption">Rinse</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/drying.jpg" data-alt="Hand-drying the car with a microfiber towel">
+            <img src="images/drying.jpg" alt="Hand-drying the car with a microfiber towel" loading="lazy" />
+            <span class="carousel-caption">Hand-dried</span>
+          </button>
+          <button type="button" class="carousel-card" data-img="images/shine.jpg" data-alt="Gleaming polished finish reflected in the door panel">
+            <img src="images/shine.jpg" alt="Gleaming polished finish reflected in the door panel" loading="lazy" />
+            <span class="carousel-caption">Streak-free shine</span>
+          </button>
+        </div>
+        <button class="carousel-nav carousel-nav-next" type="button" aria-label="Next photos">›</button>
+      </div>
+
+      <div class="carousel-dots" id="carouselDots" aria-hidden="true"></div>
     </section>
 
     <!-- ============ SERVICES ============ -->
@@ -122,18 +161,6 @@
       <p class="services-note">
         Bigger truck, SUV, or extra-muddy? Just ask us at the door — we'll be fair.
       </p>
-    </section>
-
-    <!-- ============ GALLERY ============ -->
-    <section class="gallery">
-      <p class="eyebrow center">Recent work</p>
-      <h2 class="center">See the difference</h2>
-      <div class="gallery-strip">
-        <figure><img src="images/spray.jpg" alt="Foam pre-soak covering the whole car" loading="lazy" /></figure>
-        <figure><img src="images/detail.jpg" alt="Hand-scrubbing the side panel" loading="lazy" /></figure>
-        <figure><img src="images/rinse.jpg" alt="Rinsing the roof and windows clean" loading="lazy" /></figure>
-        <figure><img src="images/shine.jpg" alt="Polished, gleaming finish after the wash" loading="lazy" /></figure>
-      </div>
     </section>
 
     <!-- ============ TESTIMONIALS ============ -->
@@ -190,6 +217,15 @@
     </footer>
 
   </main>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+    <button class="lightbox-close" type="button" aria-label="Close">×</button>
+    <button class="lightbox-prev" type="button" aria-label="Previous photo">‹</button>
+    <button class="lightbox-next" type="button" aria-label="Next photo">›</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
+    <div class="lightbox-counter" id="lightboxCounter"></div>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
