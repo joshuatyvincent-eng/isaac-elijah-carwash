@@ -1,0 +1,5 @@
+images/IMG_*.jpeg
+images/IMG_*.MOV
+images/.gitkeep
+.git
+.DS_Store
