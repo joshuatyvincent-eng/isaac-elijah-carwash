@@ -352,6 +352,25 @@ h1, h2, h3 {
   color: var(--blue-deep);
 }
 
+.story-portrait {
+  margin: 0 auto 2rem;
+  max-width: 360px;
+}
+
+.story-portrait img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 40px -18px rgba(12, 74, 110, 0.45);
+}
+
+@media (min-width: 640px) {
+  .story-portrait {
+    max-width: 420px;
+  }
+}
+
 .story-inner p {
   margin-bottom: 1rem;
   color: var(--ink-soft);
