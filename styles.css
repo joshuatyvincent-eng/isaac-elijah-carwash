@@ -911,6 +911,27 @@ h1, h2, h3 {
   border-bottom-style: solid;
 }
 
+.contact-ask {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+}
+
+.contact-ask strong {
+  color: var(--sun);
+}
+
+.payment-note {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.payment-note strong {
+  color: var(--white);
+}
+
 .service-area {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
