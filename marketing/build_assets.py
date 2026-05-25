@@ -366,7 +366,131 @@ def build_facebook():
     print(f"✓ facebook       → {out.name}  ({W}x{H})")
 
 
+# ============================================================
+# OG LINK PREVIEW — hero-style, 1200 x 630
+# Full-bleed photo + big overlay type + yellow $20 seal.
+# This is the card that renders in iMessage / WhatsApp / FB.
+# ============================================================
+
+def build_og_hero():
+    W, H = 1200, 630
+    canvas = Image.new("RGB", (W, H), NAVY_DEEP)
+    d = ImageDraw.Draw(canvas)
+
+    # Full-bleed portrait — bias toward top so faces stay in frame.
+    # Source is portrait (0.75 ratio); target is wide (1.9 ratio) so the
+    # crop is aggressive vertically — focus_y=0 keeps the boys' heads.
+    portrait_src = Image.open(ROOT / "images/IMG_0308.jpeg").convert("RGB")
+    portrait = fit_cover(portrait_src, W, H, focus_y=0.05)
+    canvas.paste(portrait, (0, 0))
+
+    # Cinematic dual gradient: dark at top for eyebrow, deeper dark at bottom
+    # for the headline + phone line. Middle stays clear so the boys read.
+    top_overlay = Image.new("RGBA", (W, 180), (0, 0, 0, 0))
+    od = ImageDraw.Draw(top_overlay)
+    for i in range(180):
+        a = int(160 * (1 - i / 180) ** 1.2)
+        od.line([(0, i), (W, i)], fill=(8, 20, 35, a))
+    canvas.paste(top_overlay, (0, 0), top_overlay)
+
+    bot_overlay = Image.new("RGBA", (W, 380), (0, 0, 0, 0))
+    od = ImageDraw.Draw(bot_overlay)
+    for i in range(380):
+        a = int(225 * (i / 380) ** 1.3)
+        od.line([(0, i), (W, i)], fill=(8, 20, 35, a))
+    canvas.paste(bot_overlay, (0, H - 380), bot_overlay)
+
+    # --- Top eyebrow
+    f_eb = font("WorkSans-Bold.ttf", 22)
+    d.text((50, 40), "QUEEN CREEK VILLAGES  ·  SUMMER 2026",
+           font=f_eb, fill=SUN)
+    d.line([(50, 78), (110, 78)], fill=SUN, width=3)
+
+    # --- Massive headline lockup (left-anchored, lower-middle)
+    headline_y = 320
+    d.text((46, headline_y),
+           "ISAAC & ELIJAH'S",
+           font=font("BigShoulders-Bold.ttf", 90), fill=CREAM)
+    d.text((44, headline_y + 78),
+           "CAR WASH",
+           font=font("BigShoulders-Bold.ttf", 140), fill=SUN)
+
+    # --- $20 seal: circular yellow medallion top-right
+    # Drawn at 4x then downsampled for crisp edges.
+    s_diam = 230
+    seal = Image.new("RGBA", (s_diam * 4, s_diam * 4), (0, 0, 0, 0))
+    sd = ImageDraw.Draw(seal)
+    sd.ellipse((0, 0, s_diam * 4 - 1, s_diam * 4 - 1), fill=SUN)
+    seal = seal.resize((s_diam, s_diam), Image.LANCZOS)
+    sx = W - s_diam - 50
+    sy = 50
+    # subtle drop shadow
+    shadow = Image.new("RGBA", (s_diam + 24, s_diam + 24), (0, 0, 0, 0))
+    ImageDraw.Draw(shadow).ellipse(
+        (12, 16, s_diam + 12, s_diam + 16), fill=(0, 0, 0, 90)
+    )
+    canvas.paste(shadow, (sx - 12, sy - 12 + 6), shadow)
+    canvas.paste(seal, (sx, sy), seal)
+
+    # seal contents — "$" + "20" + "FLAT WASH"
+    # measure to center inside the circle
+    f_seal_dollar = font("YoungSerif-Regular.ttf", 56)
+    f_seal_price  = font("YoungSerif-Regular.ttf", 130)
+    f_seal_sub    = font("WorkSans-Bold.ttf", 20)
+
+    price_str = "20"
+    dollar_w, _ = text_size(d, "$", f_seal_dollar)
+    price_w, _  = text_size(d, price_str, f_seal_price)
+    total_w = dollar_w + 4 + price_w
+    px = sx + (s_diam - total_w) // 2
+    py = sy + 38
+    d.text((px, py + 28), "$", font=f_seal_dollar, fill=NAVY_DEEP)
+    d.text((px + dollar_w + 4, py), price_str,
+           font=f_seal_price, fill=NAVY_DEEP)
+
+    # "FLAT WASH" curving below
+    sub = "FLAT WASH"
+    sub_w, _ = text_size(d, sub, f_seal_sub)
+    d.text((sx + (s_diam - sub_w) // 2, sy + s_diam - 56),
+           sub, font=f_seal_sub, fill=NAVY_DEEP)
+
+    # tiny radial pips
+    pip_color = NAVY_DEEP
+    cx_s = sx + s_diam // 2
+    cy_s = sy + s_diam // 2
+    import math
+    for i in range(12):
+        ang = (math.pi * 2) * (i / 12)
+        x = cx_s + math.cos(ang) * (s_diam // 2 - 14)
+        y = cy_s + math.sin(ang) * (s_diam // 2 - 14)
+        d.ellipse((x - 3, y - 3, x + 3, y + 3), fill=pip_color)
+
+    # --- Bottom phone strip: subtle sun rule + the phone in cream
+    # Yellow rule
+    d.rectangle((46, H - 96, 76, H - 92), fill=SUN)
+
+    d.text((46, H - 80),
+           "TEXT TO BOOK",
+           font=font("WorkSans-Bold.ttf", 20), fill=SUN)
+    d.text((44, H - 56),
+           "(480) 853-8729",
+           font=font("BigShoulders-Bold.ttf", 60), fill=CREAM)
+
+    # tagline on the right, balancing the phone
+    f_tag = font("WorkSans-Bold.ttf", 18)
+    tag = "HAND-WASHED  ·  BRAKE DUST DECON  ·  NO WATER SPOTS"
+    tw, _ = text_size(d, tag, f_tag)
+    d.text((W - tw - 50, H - 38), tag, font=f_tag, fill=SUN)
+
+    out_marketing = OUT / "social-og-hero-1200x630.png"
+    out_deployed  = ROOT / "images" / "og-preview.png"
+    canvas.save(out_marketing, "PNG", optimize=True)
+    canvas.save(out_deployed, "PNG", optimize=True)
+    print(f"✓ og hero       → {out_marketing.name}  +  images/og-preview.png  ({W}x{H})")
+
+
 if __name__ == "__main__":
     build_flyer()
     build_instagram()
     build_facebook()
+    build_og_hero()
