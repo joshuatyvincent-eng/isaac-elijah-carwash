@@ -1,6 +1,6 @@
 images/IMG_*.jpeg
 images/IMG_*.MOV
 images/.gitkeep
-marketing
+marketing/build_assets.py
 .git
 .DS_Store

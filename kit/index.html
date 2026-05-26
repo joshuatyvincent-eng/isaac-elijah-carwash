@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0c2940" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Marketing Kit — Isaac & Elijah's Car Wash</title>
+  <meta name="description" content="The full marketing kit for Isaac & Elijah's Car Wash — print flyer, social posts, SMS templates, and door script." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0c2940;
+      --navy-deep: #081b2d;
+      --cream: #faf4e6;
+      --cream-deep: #f0e6d2;
+      --sun: #f8c546;
+      --sun-deep: #d29c24;
+      --ink: #1a1a1a;
+      --ink-soft: #45526a;
+      --rule: #d6cbb0;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--navy); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ---------- header ---------- */
+    header.kit-header {
+      background: var(--navy);
+      color: var(--cream);
+      padding: 2.5rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header.kit-header::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 85% 10%, rgba(248,197,70,0.22), transparent 55%);
+      pointer-events: none;
+    }
+    header.kit-header .eyebrow {
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--sun);
+      margin: 0 0 0.4rem;
+    }
+    header.kit-header h1 {
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 0 0 0.6rem;
+      line-height: 1.05;
+      color: var(--cream);
+    }
+    header.kit-header h1 span { color: var(--sun); }
+    header.kit-header p.lede {
+      max-width: 640px;
+      margin: 0 0 1.5rem;
+      color: rgba(250, 244, 230, 0.85);
+      font-size: 1.05rem;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--sun);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-bottom: 1px dashed rgba(248, 197, 70, 0.5);
+      padding-bottom: 1px;
+    }
+    .back-link:hover { color: var(--cream); border-bottom-color: var(--cream); }
+
+    /* ---------- sections ---------- */
+    section.kit-section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    section.kit-section:last-of-type { border-bottom: none; }
+    h2.section-title {
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 0 0 0.4rem;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      letter-spacing: -0.01em;
+    }
+    p.section-sub {
+      color: var(--ink-soft);
+      margin: 0 0 2rem;
+      font-size: 1rem;
+    }
+
+    /* ---------- asset card ---------- */
+    .asset-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 720px) {
+      .asset-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+      .asset-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    .asset {
+      background: var(--white);
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 14px 40px -22px rgba(12, 41, 64, 0.35);
+      display: flex;
+      flex-direction: column;
+    }
+    .asset .preview {
+      background: var(--cream-deep);
+      display: flex; align-items: center; justify-content: center;
+      padding: 0;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .asset.feature .preview { aspect-ratio: 17 / 22; }
+    .asset.qr .preview { aspect-ratio: 1; padding: 1.5rem; background: var(--white); }
+    .asset .preview img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .asset.qr .preview img { object-fit: contain; }
+    .asset .meta {
+      padding: 1.1rem 1.25rem 1.3rem;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      flex: 1;
+    }
+    .asset .meta h3 {
+      margin: 0;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+    .asset .meta .dims {
+      font-size: 0.78rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .asset .meta p {
+      margin: 0;
+      font-size: 0.93rem;
+      color: var(--ink-soft);
+    }
+    .asset .actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: auto;
+      padding-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1rem;
+      border-radius: 0.6rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.1s ease, background 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--sun);
+      color: var(--navy-deep);
+      box-shadow: 0 4px 0 var(--sun-deep);
+    }
+    .btn-primary:hover { background: var(--sun-deep); color: var(--navy-deep); }
+    .btn-primary:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--sun-deep); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--navy);
+      border: 1.5px solid var(--rule);
+    }
+    .btn-ghost:hover { border-color: var(--navy); background: var(--cream-deep); }
+
+    /* ---------- SMS / caption blocks ---------- */
+    .copy-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 760px) {
+      .copy-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    .copy-card {
+      background: var(--white);
+      border-radius: 1rem;
+      box-shadow: 0 10px 28px -18px rgba(12, 41, 64, 0.25);
+      padding: 1.3rem 1.4rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .copy-card h3 {
+      margin: 0;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 1.05rem;
+    }
+    .copy-card .label {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sun-deep);
+      font-weight: 700;
+    }
+    .copy-card pre {
+      margin: 0;
+      padding: 0.95rem 1.05rem;
+      background: var(--cream);
+      border: 1px dashed var(--rule);
+      border-radius: 0.55rem;
+      color: var(--ink);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 0.94rem;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    .copy-card .copy-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 0.25rem;
+    }
+    .copy-card .why {
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+      font-style: italic;
+      flex: 1;
+    }
+    .copied { background: var(--sun); color: var(--navy-deep); }
+
+    /* ---------- door script ---------- */
+    .script {
+      counter-reset: step;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 760px) {
+      .script { grid-template-columns: repeat(2, 1fr); }
+    }
+    .step {
+      background: var(--white);
+      border-radius: 0.9rem;
+      padding: 1.25rem 1.3rem 1.3rem;
+      box-shadow: 0 8px 24px -18px rgba(12, 41, 64, 0.3);
+      position: relative;
+      counter-increment: step;
+    }
+    .step::before {
+      content: counter(step);
+      position: absolute;
+      top: 1.1rem; right: 1.2rem;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--sun);
+      line-height: 1;
+    }
+    .step h3 {
+      margin: 0 3rem 0.4rem 0;
+      font-family: 'Fredoka', system-ui, sans-serif;
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 1.02rem;
+    }
+    .step p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.93rem;
+      line-height: 1.5;
+    }
+    .step p em {
+      color: var(--navy);
+      font-style: normal;
+      background: linear-gradient(transparent 60%, rgba(248, 197, 70, 0.4) 60%);
+      padding: 0 2px;
+    }
+
+    /* ---------- footer ---------- */
+    footer.kit-footer {
+      background: var(--navy);
+      color: rgba(250, 244, 230, 0.8);
+      padding: 2.5rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer.kit-footer a { color: var(--sun); }
+  </style>
+</head>
+<body>
+
+<header class="kit-header">
+  <div class="wrap">
+    <p class="eyebrow">Marketing kit · For Isaac & Elijah's Car Wash</p>
+    <h1>Everything for the <span>front door.</span></h1>
+    <p class="lede">Printable flyer, social posts, link-preview hero, the QR code, ready-to-send SMS templates, and a five-step door script. Built for a homeowner who decides in thirty seconds.</p>
+    <a class="back-link" href="/">← Back to the live site</a>
+  </div>
+</header>
+
+<!-- ============================================================
+     PRINT FLYER
+     ============================================================ -->
+<section class="kit-section">
+  <div class="wrap">
+    <h2 class="section-title">Print flyer</h2>
+    <p class="section-sub">The leave-behind one-pager. Print at 100% scale on cream cardstock if you can — it sells the "real, careful small business" feel before the homeowner even reads a word.</p>
+
+    <div class="asset-grid cols-2">
+      <div class="asset feature">
+        <div class="preview"><img src="/marketing/flyer-print-letter.png" alt="Print flyer preview" /></div>
+        <div class="meta">
+          <span class="dims">PDF · US Letter · 200 DPI</span>
+          <h3>Door-to-door leave-behind</h3>
+          <p>Print 40–60 for a Saturday. Cream/natural cardstock at 80–100 lb is ideal but plain paper is fine too. Print at 100% scale — do not "fit to page."</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/marketing/flyer-print-letter.pdf" download>Download PDF</a>
+            <a class="btn btn-ghost" href="/marketing/flyer-print-letter.png" download>Download PNG</a>
+          </div>
+        </div>
+      </div>
+      <div class="asset qr">
+        <div class="preview"><img src="/images/qr-site.png" alt="QR code that opens the live site" /></div>
+        <div class="meta">
+          <span class="dims">PNG · 820×820</span>
+          <h3>QR code → live site</h3>
+          <p>Already embedded in the flyer and on the bottom of the live site. Use it on any other handout — point a phone camera at it and the booking page opens.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/images/qr-site.png" download>Download QR</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOCIAL POSTS
+     ============================================================ -->
+<section class="kit-section">
+  <div class="wrap">
+    <h2 class="section-title">Social posts &amp; link preview</h2>
+    <p class="section-sub">Three sizes, one visual system. The hero card is what shows up when the link is pasted into iMessage, WhatsApp, FB Messenger, Slack, or Discord.</p>
+
+    <div class="asset-grid cols-3">
+      <div class="asset">
+        <div class="preview"><img src="/marketing/social-instagram-1080.png" alt="Instagram square post preview" /></div>
+        <div class="meta">
+          <span class="dims">PNG · 1080×1080</span>
+          <h3>Instagram feed post</h3>
+          <p>Square format. Paired caption is below in "Suggested captions."</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/marketing/social-instagram-1080.png" download>Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="asset">
+        <div class="preview"><img src="/marketing/social-facebook-1200x630.png" alt="Facebook landscape post preview" /></div>
+        <div class="meta">
+          <span class="dims">PNG · 1200×630</span>
+          <h3>Facebook / Nextdoor</h3>
+          <p>Landscape format. Also works for any community Slack/Discord channel post.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/marketing/social-facebook-1200x630.png" download>Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="asset">
+        <div class="preview"><img src="/marketing/social-og-hero-1200x630.png" alt="Hero-style link preview image" /></div>
+        <div class="meta">
+          <span class="dims">PNG · 1200×630</span>
+          <h3>Link preview (iMessage / WhatsApp)</h3>
+          <p>Automatically renders when the live URL is pasted into a chat. You don't usually need to attach it manually.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="/marketing/social-og-hero-1200x630.png" download>Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SMS TEMPLATES
+     ============================================================ -->
+<section class="kit-section">
+  <div class="wrap">
+    <h2 class="section-title">SMS templates</h2>
+    <p class="section-sub">Tap "Copy" on any card, then paste into Messages. The site URL auto-expands into a rich preview card on most phones.</p>
+
+    <div class="copy-grid cols-2">
+
+      <div class="copy-card">
+        <span class="label">Cold neighbor blast</span>
+        <h3>"We're new — here's what we do"</h3>
+        <pre id="sms-1">Hi! Isaac &amp; Elijah here — Queen Creek Villages neighbors. We're hand-washing cars this summer to save up for a real business idea. Full exterior, hand-scrubbed, brake-dust gone — $20 flat. Want one? Text this number with your car, date, and a good time.
+
+https://isaac-elijah-carwash.vercel.app</pre>
+        <div class="copy-row">
+          <span class="why">Names + neighborhood up front → not a scam. Specific price, specific offer.</span>
+          <button class="btn btn-ghost copy-btn" data-target="sms-1">Copy</button>
+        </div>
+      </div>
+
+      <div class="copy-card">
+        <span class="label">After-the-knock follow-up</span>
+        <h3>"They said maybe"</h3>
+        <pre id="sms-2">Thanks for chatting earlier — this is Isaac &amp; Elijah. Here's our site if you want to look later: https://isaac-elijah-carwash.vercel.app — we can usually do same-day or weekend. Just text us back when you're ready. 🚗</pre>
+        <div class="copy-row">
+          <span class="why">References the in-person moment. Removes friction. Reassures availability.</span>
+          <button class="btn btn-ghost copy-btn" data-target="sms-2">Copy</button>
+        </div>
+      </div>
+
+      <div class="copy-card">
+        <span class="label">Forwardable share</span>
+        <h3>For a happy neighbor to send friends</h3>
+        <pre id="sms-3">If anyone in the Villages needs a car wash this summer — these two neighborhood teens (Isaac &amp; Elijah) did a great job on ours. $20, hand-washed, even got the brake dust off the wheels. Text (480) 853-8729 — or see https://isaac-elijah-carwash.vercel.app</pre>
+        <div class="copy-row">
+          <span class="why">Written in a parent's voice. Third-person endorsement.</span>
+          <button class="btn btn-ghost copy-btn" data-target="sms-3">Copy</button>
+        </div>
+      </div>
+
+      <div class="copy-card">
+        <span class="label">Group chat / Nextdoor short</span>
+        <h3>Single-line version</h3>
+        <pre id="sms-4">Local kids hand-washing cars — Isaac &amp; Elijah from QC Villages. $20 flat, brake dust removal included. (480) 853-8729 · isaac-elijah-carwash.vercel.app</pre>
+        <div class="copy-row">
+          <span class="why">Short enough for any group chat or community feed.</span>
+          <button class="btn btn-ghost copy-btn" data-target="sms-4">Copy</button>
+        </div>
+      </div>
+
+      <div class="copy-card">
+        <span class="label">Booking confirmation</span>
+        <h3>What Isaac &amp; Elijah send back</h3>
+        <pre id="sms-5">Got it! Confirming a wash for [CAR] on [DATE] around [TIME]. We'll knock when we're there. $20, Zelle (this number) or cash works. — Isaac &amp; Elijah</pre>
+        <div class="copy-row">
+          <span class="why">Send this every time so the customer has a record of what they agreed to.</span>
+          <button class="btn btn-ghost copy-btn" data-target="sms-5">Copy</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOCIAL CAPTIONS
+     ============================================================ -->
+<section class="kit-section">
+  <div class="wrap">
+    <h2 class="section-title">Social captions</h2>
+    <p class="section-sub">Copy these and pair with the matching image above.</p>
+
+    <div class="copy-grid cols-2">
+
+      <div class="copy-card">
+        <span class="label">Instagram</span>
+        <h3>Pair with the 1080×1080 square</h3>
+        <pre id="cap-ig">Hi neighbors 👋 We're Isaac &amp; Elijah, two Queen Creek Villages teens hand-washing cars this summer to save up for a real business idea.
+
+$20 flat. Full exterior. Brake-dust decon on the wheels. Hand-dried so you don't get water spots. We walk to you.
+
+Text us: (480) 853-8729
+Zelle (same number) or cash.
+
+#queencreek #queencreekvillages #carwash #localkids #shoplocal</pre>
+        <div class="copy-row">
+          <span class="why">Hashtag block at the end is intentional — keeps the body readable.</span>
+          <button class="btn btn-ghost copy-btn" data-target="cap-ig">Copy</button>
+        </div>
+      </div>
+
+      <div class="copy-card">
+        <span class="label">Facebook / Nextdoor</span>
+        <h3>Pair with the 1200×630 landscape</h3>
+        <pre id="cap-fb">Hand car wash by your neighbors. Two Queen Creek Villages teens (Isaac &amp; Elijah) are saving up for a summer business — and giving you the cleanest car on the cul-de-sac while they do it.
+
+$20 flat, exterior. Brake dust off the wheels. Hand-dried, no water spots. We walk to you anywhere in QC Villages.
+
+📱 Text (480) 853-8729 — Zelle to the same number or cash.
+🌐 isaac-elijah-carwash.vercel.app</pre>
+        <div class="copy-row">
+          <span class="why">Nextdoor's audience is the same person — same post works.</span>
+          <button class="btn btn-ghost copy-btn" data-target="cap-fb">Copy</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DOOR SCRIPT
+     ============================================================ -->
+<section class="kit-section">
+  <div class="wrap">
+    <h2 class="section-title">At-the-door script</h2>
+    <p class="section-sub">Five steps. Quiet confidence beats a hard pitch every time.</p>
+
+    <div class="script">
+      <div class="step">
+        <h3>Hand them the phone</h3>
+        <p>Open to the live site. Don't pitch — let the page do it. Say: <em>"Hi, I'm Isaac and this is my brother Elijah. We live a couple streets over. Our site explains what we do — mind taking a look?"</em></p>
+      </div>
+      <div class="step">
+        <h3>Wait quietly</h3>
+        <p>Let them scroll. The hero, price chips, and portrait do the work in about fifteen seconds. Resist the urge to fill the silence.</p>
+      </div>
+      <div class="step">
+        <h3>If they say yes</h3>
+        <p>Ask: <em>car, date, time.</em> Send the "booking confirmation" SMS above so they have a record of what they agreed to.</p>
+      </div>
+      <div class="step">
+        <h3>If they say maybe</h3>
+        <p>Hand them the printed flyer. Say: <em>"No worries — here's a little flyer with our number and a QR code. Text us whenever."</em> Then move on.</p>
+      </div>
+      <div class="step">
+        <h3>If they say no</h3>
+        <p>Thank them politely and move to the next door. Never argue, never linger. A real "no" is a gift — it frees up your time for the next "yes."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXTRAS
+     ============================================================ -->
+<section class="kit-section">
+  <div class="wrap">
+    <h2 class="section-title">More</h2>
+    <p class="section-sub">For anyone curious about how the kit was built or who wants to reuse the system.</p>
+
+    <div class="copy-grid cols-2">
+      <div class="copy-card">
+        <span class="label">Reference</span>
+        <h3>Design philosophy</h3>
+        <pre style="font-family: 'Inter', system-ui, sans-serif;">"Driveway Sunlight" — deep navy + warm cream + sun-yellow accent. The visual system behind every asset in this kit. Used for reference if you ever want to commission a new piece.</pre>
+        <div class="copy-row">
+          <span class="why">Read it if you ever need to brief a designer or printer.</span>
+          <a class="btn btn-ghost" href="/marketing/design-philosophy.md">Open MD</a>
+        </div>
+      </div>
+      <div class="copy-card">
+        <span class="label">Reference</span>
+        <h3>Full usage notes</h3>
+        <pre style="font-family: 'Inter', system-ui, sans-serif;">The original MARKETING.md doc — same content as this page, but as a plain markdown file you can print or paste into a doc.</pre>
+        <div class="copy-row">
+          <span class="why">Useful if you want the SMS scripts inside a Google Doc.</span>
+          <a class="btn btn-ghost" href="/marketing/MARKETING.md">Open MD</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="kit-footer">
+  <div class="wrap">
+    <p>Made for Isaac &amp; Elijah's Car Wash · Queen Creek Villages · <a href="/">Live site</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const target = document.getElementById(btn.dataset.target);
+      if (!target) return;
+      const text = target.innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = '✓ Copied';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 1500);
+      } catch (e) {
+        // fallback: select + execCommand on older browsers
+        const range = document.createRange();
+        range.selectNodeContents(target);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        try { document.execCommand('copy'); } catch {}
+        sel.removeAllRanges();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
